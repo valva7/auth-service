@@ -7,3 +7,9 @@ spring:
       password: qwe1212
   jpa:
     database: mysql
+    hibernate:
+      ddl-auto: update
+
+kakao:
+  client_id: b5b4e67b3c1c519d3dd172cdc4cd5cc8
+  redirect_uri: http://localhost:8080/kakao/callback
