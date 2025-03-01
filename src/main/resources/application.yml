@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth?useUnicode=true&serverTimezone=Asia/Seoul
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: qwe1212
+  jpa:
+    database: mysql
