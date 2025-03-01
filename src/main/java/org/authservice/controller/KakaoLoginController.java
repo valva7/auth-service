@@ -2,8 +2,7 @@ package org.authservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.authservice.dto.KakaoUserInfoRespDto;
-import org.authservice.service.KakaoService;
+import org.authservice.service.LoginService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class KakaoLoginController {
 
-    private final KakaoService kakaoService;
+    private final LoginService loginService;
 
     @GetMapping("/kakao/callback")
     public ResponseEntity callback(@RequestParam("code")String code){
-        String accessTokenFromKakao = kakaoService.getAccessTokenFromKakao(code);
-        KakaoUserInfoRespDto userFromKakao = kakaoService.getUserFromKakao(accessTokenFromKakao);
-        log.info("user nickname is " + userFromKakao.getKakaoAccount().getProfile().getNickName());
+        loginService.login(code);
         return new ResponseEntity(HttpStatus.OK);
     }
 }
