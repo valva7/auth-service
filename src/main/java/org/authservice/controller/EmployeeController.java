@@ -3,7 +3,7 @@ package org.authservice.controller;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.authservice.model.Employee;
+import org.authservice.entity.Employee;
 import org.authservice.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,8 +29,9 @@ public class EmployeeController {
     @PostMapping(value = "/employee", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Employee> create(@RequestParam String firstName,
                                             @RequestParam String lastName,
-                                            @RequestParam Long departmentId) {
-        Employee employee = employeeService.createEmployee(firstName, lastName, departmentId);
+                                            @RequestParam Long departmentId,
+                                            @RequestParam String kakaoNickName) {
+        Employee employee = employeeService.createEmployee(firstName, lastName, departmentId, kakaoNickName);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 

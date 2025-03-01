@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.authservice.model.Department;
+import org.authservice.entity.Department;
 import org.authservice.service.DepartmentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
