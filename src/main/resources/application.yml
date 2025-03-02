@@ -5,12 +5,12 @@ spring:
     url: jdbc:mysql://mysql/auth
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      username: root
+      username: devkim
       password: qwe1212
   jpa:
     database: mysql
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
 
 kakao:
   client_id: b5b4e67b3c1c519d3dd172cdc4cd5cc8

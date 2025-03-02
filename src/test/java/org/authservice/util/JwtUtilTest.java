@@ -45,7 +45,7 @@ public class JwtUtilTest {
             .build();
 
         String token = JwtUtil.createUserToken(employee);
-        List res = JwtUtil.parseToken(token).get("employeeRoles", List.class);
+        List res = JwtUtil.parseToken(token).get("roles", List.class);
         assertEquals(employeeEmployeeRoleSet.size(), res.size());
         assertTrue(res.contains(employeeEmployeeRole1.getName()));
         assertTrue(res.contains(employeeEmployeeRole2.getName()));
