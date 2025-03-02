@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.authservice.entity.Employee;
-import org.authservice.entity.Role;
+import org.authservice.entity.EmployeeRole;
 
 public class JwtUtil {
     private static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
@@ -25,8 +25,8 @@ public class JwtUtil {
         Map<String, Object> claims = new HashMap<>();
         claims.put("nickname", employee.getKakaoNickName());
 
-        if(employee.getRoles() != null && !employee.getRoles().isEmpty()){
-            claims.put("roles", employee.getRoles().stream().map(Role::getName)
+        if(employee.getEmployeeRoles() != null && !employee.getEmployeeRoles().isEmpty()){
+            claims.put("roles", employee.getEmployeeRoles().stream().map(EmployeeRole::getName)
                 .collect(Collectors.toSet()));
         }else{
             claims.put("roles", Collections.emptySet());
