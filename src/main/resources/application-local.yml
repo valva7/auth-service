@@ -2,7 +2,7 @@ spring:
   application:
     name: auth
   datasource:
-    url: jdbc:mysql://mysql/auth
+    url: jdbc:mysql://localhost:3306/auth?useUnicode=true&serverTimezone=Asia/Seoul
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
