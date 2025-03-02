@@ -21,12 +21,12 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
 
-    @GetMapping(value = "/employee", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/admin/employee", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Employee>> test() {
         return new ResponseEntity<>(employeeService.listEmployees(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/employee", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/admin/employee", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Employee> create(@RequestParam String firstName,
                                             @RequestParam String lastName,
                                             @RequestParam Long departmentId,

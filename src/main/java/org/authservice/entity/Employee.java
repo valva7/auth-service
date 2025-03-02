@@ -47,4 +47,9 @@ public class Employee {
     )
     private Set<Role> roles;
 
+    public static boolean isHR(Employee employee){
+        Set<Role> employeeRoles = employee.getRoles();
+        return employeeRoles.stream().anyMatch(r -> r.getName().equals("인사팀"));
+    }
+
 }
