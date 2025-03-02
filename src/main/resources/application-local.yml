@@ -11,6 +11,11 @@ spring:
     database: mysql
     hibernate:
       ddl-auto: validate
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
 
 kakao:
   client_id: b5b4e67b3c1c519d3dd172cdc4cd5cc8

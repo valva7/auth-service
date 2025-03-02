@@ -1,5 +1,11 @@
 ## CHANGE LOG
 
+#### Throttling 
+✅ Token Bucket을 이용한 Throttling 적용
+
+#### redis setup
+✅ redis 설정
+
 #### k8s 배포
 ✅ multi 환경을 위한 application properties 설정
 
